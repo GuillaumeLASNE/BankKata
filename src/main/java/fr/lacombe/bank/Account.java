@@ -9,6 +9,7 @@ public class Account {
     }
 
     public int withdraw(Amount amount) {
-        return -amount.getValue();
+        balance -= amount.getValue();
+        return balance;
     }
 }

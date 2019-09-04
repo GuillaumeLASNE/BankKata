@@ -33,19 +33,33 @@ class AccountTest {
     @Test
     void withdrawing_amount_reduces_account_balance() {
         Account account = new Account();
+        int withdrawnAmount = 50;
 
-        int balance = account.withdraw(Amount.of(50));
+        int balance = account.withdraw(Amount.of(withdrawnAmount));
 
-        assertThat(balance).isEqualTo(-50);
+        assertThat(balance).isEqualTo(-withdrawnAmount);
     }
 
     @Test
     void withdrawing_amount_reduces_account_balance_triangulation() {
         Account account = new Account();
+        int withdrawnAmount = 750;
 
-        int balance = account.withdraw(Amount.of(750));
+        int balance = account.withdraw(Amount.of(withdrawnAmount));
 
-        assertThat(balance).isEqualTo(-750);
+        assertThat(balance).isEqualTo(-withdrawnAmount);
+    }
+
+    @Test
+    void balance_is_equal_to_the_deposed_amounts_minus_the_withdrawn_amounts() {
+        Account account = new Account();
+        int deposedAmount = 500;
+        int withdrawnAmount = 100;
+
+        account.deposit(Amount.of(deposedAmount));
+        int balance = account.withdraw(Amount.of(withdrawnAmount));
+
+        assertThat(balance).isEqualTo(deposedAmount - withdrawnAmount);
     }
 }
 
