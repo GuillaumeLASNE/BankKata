@@ -11,7 +11,7 @@ class AccountTest {
         int deposedAmount = 100;
         Account account = new Account();
 
-        int balance = account.deposit(deposedAmount);
+        int balance = account.deposit(Amount.of(deposedAmount));
 
         assertThat(balance).isEqualTo(deposedAmount);
     }
@@ -22,8 +22,8 @@ class AccountTest {
         int secondDeposit = 70;
         Account account = new Account();
 
-        account.deposit(firstDeposit);
-        int balance = account.deposit(secondDeposit);
+        account.deposit(Amount.of(firstDeposit));
+        int balance = account.deposit(Amount.of(secondDeposit));
 
 
         int sumOfDeposits = firstDeposit + secondDeposit;
