@@ -1,21 +1,21 @@
 package fr.lacombe.bank;
 
 public class Balance {
-    private int balance;
+    private Amount value;
 
     public Balance() {
-        balance = 0;
+        value = Amount.of(0);
     }
 
     void decrease(Amount amount) {
-        balance -= amount.getValue();
+        value = value.decrease(amount);
     }
 
     void increase(Amount amount) {
-        balance += amount.getValue();
+        value = value.increase(amount);
     }
 
     int getBalance() {
-        return balance;
+        return value.getValue();
     }
 }
