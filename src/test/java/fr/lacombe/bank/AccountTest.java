@@ -36,7 +36,16 @@ class AccountTest {
 
         int balance = account.withdraw(Amount.of(50));
 
-        assertThat(balance).isEqualTo(- 50);
+        assertThat(balance).isEqualTo(-50);
+    }
+
+    @Test
+    void withdrawing_amount_reduces_account_balance_triangulation() {
+        Account account = new Account();
+
+        int balance = account.withdraw(Amount.of(750));
+
+        assertThat(balance).isEqualTo(-750);
     }
 }
 

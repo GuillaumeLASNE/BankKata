@@ -9,6 +9,6 @@ public class Account {
     }
 
     public int withdraw(Amount amount) {
-        return -50;
+        return -amount.getValue();
     }
 }
