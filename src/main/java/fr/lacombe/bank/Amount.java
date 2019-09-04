@@ -15,4 +15,5 @@ public final class Amount {
     public int getValue() {
         return value;
     }
+
 }
