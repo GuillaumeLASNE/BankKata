@@ -17,16 +17,6 @@ class AccountTest {
     }
 
     @Test
-    void deposit_increase_account_balance_triangulation() {
-        Account account = new Account();
-        int deposedAmount = 30;
-
-        int balance = account.deposit(deposedAmount);
-
-        assertThat(balance).isEqualTo(deposedAmount);
-    }
-
-    @Test
     void balance_is_the_sum_of_deposits() {
         int firstDeposit = 80;
         int secondDeposit = 70;
