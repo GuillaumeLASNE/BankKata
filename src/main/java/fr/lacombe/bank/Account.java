@@ -2,18 +2,20 @@ package fr.lacombe.bank;
 
 public class Account {
 
+    private Balance balance;
+
     public Account() {
-        Balance.resetBalance();
+        balance = new Balance();
+        balance.resetBalance();
     }
 
     public int deposit(Amount amount) {
-        Balance.increase(amount);
-        return Balance.balance;
+        balance.increase(amount);
+        return balance.getBalance();
     }
 
     public int withdraw(Amount amount) {
-        Balance.decrease(amount);
-        return Balance.balance;
+        balance.decrease(amount);
+        return balance.getBalance();
     }
-
 }
