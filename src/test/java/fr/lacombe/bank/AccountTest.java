@@ -14,5 +14,13 @@ class AccountTest {
         int balance = account.deposit(deposedAmount);
         assertThat(balance).isEqualTo(deposedAmount);
     }
+
+    @Test
+    void deposit_increase_account_balance_triangulation() {
+        Account account = new Account();
+        int deposedAmount = 30;
+        int balance = account.deposit(deposedAmount);
+        assertThat(balance).isEqualTo(deposedAmount);
+    }
 }
 
