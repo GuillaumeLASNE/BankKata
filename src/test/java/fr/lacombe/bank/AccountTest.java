@@ -29,5 +29,14 @@ class AccountTest {
         int sumOfDeposits = firstDeposit + secondDeposit;
         assertThat(balance).isEqualTo(sumOfDeposits);
     }
+
+    @Test
+    void withdrawing_amount_reduces_account_balance() {
+        Account account = new Account();
+
+        int balance = account.withdraw(Amount.of(50));
+
+        assertThat(balance).isEqualTo(- 50);
+    }
 }
 

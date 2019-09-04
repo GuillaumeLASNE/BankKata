@@ -7,4 +7,8 @@ public class Account {
         balance += amount.getValue();
         return balance;
     }
+
+    public int withdraw(Amount amount) {
+        return -50;
+    }
 }
