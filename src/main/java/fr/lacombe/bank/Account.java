@@ -6,7 +6,6 @@ public class Account {
 
     public Account() {
         balance = new Balance();
-        balance.resetBalance();
     }
 
     public int deposit(Amount amount) {

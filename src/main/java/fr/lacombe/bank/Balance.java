@@ -3,6 +3,10 @@ package fr.lacombe.bank;
 public class Balance {
     private int balance;
 
+    public Balance() {
+        balance = 0;
+    }
+
     void decrease(Amount amount) {
         balance -= amount.getValue();
     }
@@ -13,9 +17,5 @@ public class Balance {
 
     int getBalance() {
         return balance;
-    }
-
-    void resetBalance() {
-        balance = 0;
     }
 }
